@@ -169,8 +169,8 @@ class Folder(FileOrFolder):
     Does not have to exist - can represent a new folder yet to be created.
     """
     _url_template = "pubapi/v1/fs%(path)s"
-    _url_template_permissions = "pubapi/v1/perms/folder/%(path)s"
-    _url_template_effective_permissions = "pubapi/v1/perms/user/%(username)s"
+    _url_template_permissions = "pubapi/v2/perms/folder/%(path)s"
+    _url_template_effective_permissions = "pubapi/v2/perms/user/%(username)s"
     _lazy_attributes = {'name', 'folder_id', 'is_folder'}
     _link_kind = 'folder'
     folders = None
@@ -258,7 +258,7 @@ class User(base.Resource):
     Name is a dictionary with 2 keys: givenName and lastName.
     """
     _url_template = "pubapi/v2/users/%(id)s"
-    _url_template_effective_permissions = "pubabi/v1/perms/user/%(userName)s"
+    _url_template_effective_permissions = "pubapi/v2/perms/user/%(userName)s"
     _lazy_attributes = {'userName', 'externalId', 'email', 'name', 'active', 'locked', 'authType',
                         'role', 'userType', 'idpUserId'}
 
